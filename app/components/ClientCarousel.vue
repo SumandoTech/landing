@@ -1,99 +1,49 @@
 <template>
-  <section
-    class="bg-white dark:bg-gray-900 section-padding border-y border-gray-200 dark:border-gray-700 dark:text-white">
+  <section class="section-padding bg-white dark:bg-gray-900">
     <div class="container-custom">
-      <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 dark:text-white">
-          Instituciones que Confían en Nosotros
-        </h2>
-        <div class="w-24 h-1 bg-blue-700 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-400">
-          Colaboramos con las instituciones educativas más prestigiosas del país
-        </p>
-      </div>
+      <!-- Grid de 2 columnas: Grid de clientes a la izquierda, Título sticky a la derecha -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
 
-      <!-- Logos Carousel -->
-      <div class="relative overflow-hidden">
-        <!-- Gradient overlays para efecto fade -->
-        <div
-          class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
-        </div>
-        <div
-          class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
-        </div>
-
-        <!-- Scrolling container -->
-        <div class="flex animate-scroll-slow">
-          <!-- First set of logos -->
-          <div class="flex items-center gap-8 px-6">
-            <div v-for="(client, index) in clients" :key="`client-1-${index}`"
-              class="flex-shrink-0 w-56 h-48 flex items-center justify-center p-8 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:shadow-xl transition-all duration-300 group">
+        <!-- Columna Izquierda: Grid de Clientes (2x4) -->
+        <div class="order-2 lg:order-1">
+          <div class="grid grid-cols-2 gap-4 lg:gap-6 max-w-2xl">
+            <div v-for="(client, index) in clients" :key="`grid-${index}`"
+              class="p-6 md:p-8 bg-white rounded-xl border border-gray-200 hover:border-green-600 hover:shadow-lg transition-all">
               <img :src="client.logo" :alt="client.name"
-                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" />
-            </div>
-          </div>
-
-          <!-- Duplicate set for seamless loop -->
-          <div class="flex items-center gap-8 px-6">
-            <div v-for="(client, index) in clients" :key="`client-2-${index}`"
-              class="flex-shrink-0 w-56 h-48 flex items-center justify-center p-8 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:shadow-xl transition-all duration-300 group">
-              <img :src="client.logo" :alt="client.name"
-                class="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300" />
+                class="w-full h-auto min-h-20 max-h-28 object-contain mx-auto filter grayscale hover:grayscale-0 transition-all" />
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Grid de Clientes (Nuevo estilo Preline) -->
-      <div class="mt-20">
-        <div class="sm:w-1/2 xl:w-1/3 mx-auto text-center mb-6 md:mb-12">
-          <h2 class="text-xl font-semibold md:text-2xl md:leading-tight text-gray-800 dark:text-neutral-200">
-            Colaboramos con las instituciones educativas más prestigiosas del país
+        <!-- Columna Derecha: Header Sticky -->
+        <div class="order-1 lg:order-2 lg:sticky lg:top-32">
+          <span
+            class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-semibold mb-6 uppercase tracking-wide">
+            Nuestros Clientes
+          </span>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            Instituciones que Confían en Nosotros
           </h2>
+          <div class="w-24 h-1 bg-green-600 mb-6 rounded-full"></div>
+          <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            Colaboramos con las instituciones educativas más prestigiosas del país
+          </p>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 max-w-6xl mx-auto">
-          <div v-for="(client, index) in clients.slice(0, 8)" :key="`grid-${index}`"
-            class="p-6 md:p-8 bg-white dark:bg-white rounded-xl border border-gray-200 hover:border-blue-600 hover:shadow-lg transition-all">
-            <img :src="client.logo" :alt="client.name"
-              class="w-full h-auto min-h-32 max-h-40 object-contain mx-auto filter grayscale hover:grayscale-0 transition-all" />
-          </div>
-        </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const clients = [
   { name: 'Colegio San Ignacio', logo: '/clientes/san_ignacio.png' },
-  { name: 'Colegio San Cristóbal', logo: '/clientes/san_cristobal.png' },
   { name: 'Colegio San Diego', logo: '/clientes/san_diego.png' },
+  { name: 'Colegio San Cristóbal', logo: '/clientes/san_cristobal.png' },
   { name: 'Colegio San Damián', logo: '/clientes/san_damian.png' },
   { name: 'Colegio Jorge Huneeus', logo: '/clientes/jorge_huneeus.png' },
   { name: 'Colegio Lenka Franulic', logo: '/clientes/lenka_franulic.png' },
-  { name: 'Municipalidad de Ñuñoa', logo: '/clientes/nunoa.png' },
-  { name: 'Colegio Siria', logo: '/clientes/siria.png' },
+  { name: 'Colegio Ñuñoa', logo: '/clientes/nunoa.png' },
+  { name: 'Colegio Siria', logo: '/clientes/siria.png' }
 ];
 </script>
-
-<style scoped>
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll-slow {
-  animation: scroll 40s linear infinite;
-}
-
-.animate-scroll-slow:hover {
-  animation-play-state: paused;
-}
-</style>

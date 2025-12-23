@@ -1,182 +1,204 @@
 <template>
-    <section id="quienes-somos"
-        class="section-padding bg-white dark:bg-gray-900 dark:text-white relative overflow-hidden">
-        <DecorativeBackground />
+    <section id="quienes-somos" class="section-padding bg-gray-50 dark:bg-gray-800 relative">
         <div class="container-custom relative z-10">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <span
-                    class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-md text-sm font-semibold mb-4 uppercase tracking-wide">
-                    Nuestra Historia
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
-                    ¿Quiénes Somos?
-                </h2>
-                <div class="w-24 h-1 bg-blue-700 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400">
-                    Una fundación comprometida con la excelencia educativa y el desarrollo integral
-                </p>
-            </div>
+            <!-- Grid de 2 columnas -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
 
-            <!-- Historia -->
-            <div class="max-w-4xl mx-auto mb-20">
-                <div class="bg-gray-50 rounded-lg p-8 md:p-12 border border-gray-200">
-                    <div class="prose prose-lg max-w-none text-gray-700">
-                        <p class="mb-4 text-lg">
-                            Fundación Sumando nació en <strong class="text-blue-700">2010</strong> con una visión clara:
-                            transformar la educación chilena a través de la innovación y el compromiso con la
-                            excelencia.
-                            Desde nuestros inicios, hemos trabajado incansablemente para desarrollar herramientas y
-                            metodologías
-                            que faciliten el trabajo docente y potencien el aprendizaje de los estudiantes.
-                        </p>
-                        <p class="mb-4 text-lg">
-                            A lo largo de más de <strong class="text-blue-700">15 años</strong>, hemos crecido junto a
-                            las
-                            instituciones educativas que confían en nosotros, adaptándonos constantemente a los desafíos
-                            del
-                            sistema educativo moderno y manteniéndonos a la vanguardia de las mejores prácticas
-                            pedagógicas.
-                        </p>
-                        <p class="text-lg">
-                            Hoy, somos un referente en <strong class="text-blue-700">transformación educativa</strong>,
-                            trabajando con más de 50 instituciones y impactando positivamente la vida de miles de
-                            estudiantes
-                            y docentes en todo el país.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Valores -->
-            <div class="mb-16">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 dark:text-white">Nuestros Valores</h3>
-                    <div class="w-24 h-1 bg-blue-700 mx-auto mb-4 dark:bg-blue-500"></div>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-400">
-                        Los principios que guían cada una de nuestras acciones
+                <!-- Columna Izquierda: Header Sticky -->
+                <div class="lg:sticky lg:top-32">
+                    <span
+                        class="inline-block px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-sm font-semibold mb-6 uppercase tracking-wide">
+                        Nuestra Historia
+                    </span>
+                    <h2
+                        class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        ¿Quiénes Somos?
+                    </h2>
+                    <div class="w-24 h-1 bg-red-600 mb-6 rounded-full"></div>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+                        Una fundación comprometida con la excelencia educativa y el desarrollo integral
                     </p>
-                </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Valor 1: Innovación -->
-                    <div
-                        class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-sm">
+                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">15+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Años de Experiencia</div>
                         </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Innovación</h4>
-                        <p class="text-gray-600">
-                            Buscamos constantemente nuevas formas de mejorar la educación
-                        </p>
-                    </div>
-
-                    <!-- Valor 2: Excelencia -->
-                    <div
-                        class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                            </svg>
+                        <div class="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-sm">
+                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">50+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Instituciones</div>
                         </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Excelencia</h4>
-                        <p class="text-gray-600">
-                            Compromiso con los más altos estándares de calidad
-                        </p>
-                    </div>
-
-                    <!-- Valor 3: Compromiso Social -->
-                    <div
-                        class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Compromiso Social</h4>
-                        <p class="text-gray-600">
-                            Educación como motor de cambio social y equidad
-                        </p>
-                    </div>
-
-                    <!-- Valor 4: Colaboración -->
-                    <div
-                        class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center hover:border-blue-600 hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                        </div>
-                        <h4 class="text-xl font-bold text-gray-900 mb-3">Colaboración</h4>
-                        <p class="text-gray-600">
-                            Trabajo en equipo para lograr objetivos comunes
-                        </p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Enfoque Pedagógico -->
-            <div class="max-w-5xl mx-auto">
-                <div class="bg-gradient-to-r from-blue-700 to-blue-800 rounded-lg shadow-xl p-8 md:p-12 text-white">
-                    <div class="grid md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <h3 class="text-3xl md:text-4xl font-bold mb-6">Nuestro Enfoque Pedagógico</h3>
-                            <p class="text-lg text-blue-50 leading-relaxed mb-6">
-                                Implementamos metodologías basadas en evidencia científica y mejores prácticas
-                                internacionales.
+                <!-- Columna Derecha: Contenido -->
+                <div class="space-y-6">
+
+                    <!-- Historia -->
+                    <div
+                        class="relative bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 overflow-hidden">
+                        <!-- Icono de fondo -->
+                        <div
+                            class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-blue-100/50 dark:bg-blue-900/20 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-blue-500/30" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Nuestra Historia</h3>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Fundación Sumando nació en <strong class="text-blue-600">2010</strong> con una visión
+                                clara:
+                                transformar la educación chilena. Hoy, somos un referente en <strong
+                                    class="text-blue-600">transformación educativa</strong>,
+                                trabajando con más de 50 instituciones.
                             </p>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-200 flex-shrink-0 mt-1" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span class="text-blue-50">Aprendizaje activo y centrado en el estudiante</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-200 flex-shrink-0 mt-1" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span class="text-blue-50">Evaluación formativa y retroalimentación continua</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-200 flex-shrink-0 mt-1" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span class="text-blue-50">Desarrollo de habilidades del siglo XXI</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <svg class="w-6 h-6 text-blue-200 flex-shrink-0 mt-1" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span class="text-blue-50">Integración efectiva de tecnología educativa</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="hidden md:flex items-center justify-center">
-                            <div
-                                class="w-64 h-64 rounded-full bg-white/10 backdrop-blur-sm border-4 border-white/20 flex items-center justify-center">
-                                <svg class="w-32 h-32 text-white/30" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
                         </div>
                     </div>
+
+                    <!-- Visión -->
+                    <div
+                        class="relative bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 overflow-hidden">
+                        <!-- Icono de fondo -->
+                        <div
+                            class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-blue-100/50 dark:bg-blue-900/20 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-blue-500/30" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Visión</h3>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Convertirnos en <strong class="text-blue-600">líderes nacionales</strong> en la mejora
+                                continua de la educación,
+                                asegurando que cada institución y estudiante acceda a un <strong
+                                    class="text-blue-600">aprendizaje significativo y sostenible</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misión -->
+                    <div
+                        class="relative bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 overflow-hidden">
+                        <!-- Icono de fondo -->
+                        <div
+                            class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-slate-100/50 dark:bg-slate-900/20 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-slate-500/30" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Misión</h3>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Ser líderes en <strong class="text-slate-700 dark:text-slate-300">transformación
+                                    educativa</strong>,
+                                desarrollando <strong class="text-slate-700 dark:text-slate-300">herramientas
+                                    innovadoras</strong> que faciliten el trabajo docente
+                                y <strong class="text-slate-700 dark:text-slate-300">aseguren la calidad
+                                    educativa</strong> en cada institución.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Valores -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="relative bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-all overflow-hidden">
+                            <div
+                                class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue-100/30 dark:bg-blue-900/20">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2 relative z-10">Innovación
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 relative z-10">Nuevas formas de mejorar
+                            </p>
+                        </div>
+                        <div
+                            class="relative bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-all overflow-hidden">
+                            <div
+                                class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue-100/30 dark:bg-blue-900/20">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2 relative z-10">Excelencia
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 relative z-10">Altos estándares</p>
+                        </div>
+                        <div
+                            class="relative bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-all overflow-hidden">
+                            <div
+                                class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue-100/30 dark:bg-blue-900/20">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2 relative z-10">Compromiso
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 relative z-10">Educación como motor</p>
+                        </div>
+                        <div
+                            class="relative bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-500 transition-all overflow-hidden">
+                            <div
+                                class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue-100/30 dark:bg-blue-900/20">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2 relative z-10">Colaboración
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 relative z-10">Trabajo en equipo</p>
+                        </div>
+                    </div>
+
+                    <!-- Enfoque Pedagógico -->
+                    <div
+                        class="bg-red-50/50 dark:bg-red-900/10 rounded-2xl p-8 border-2 border-red-200 dark:border-red-800">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Nuestro Enfoque Pedagógico
+                        </h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                            Implementamos metodologías basadas en evidencia científica y mejores prácticas
+                            internacionales.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Aprendizaje activo y centrado en el
+                                    estudiante</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Evaluación formativa y retroalimentación
+                                    continua</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Desarrollo de habilidades del siglo
+                                    XXI</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 dark:text-red-400 flex-shrink-0 mt-0.5" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="text-gray-700 dark:text-gray-300">Integración efectiva de tecnología
+                                    educativa</span>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
