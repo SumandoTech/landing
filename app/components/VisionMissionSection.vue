@@ -1,6 +1,7 @@
 <template>
-    <section class="bg-white dark:bg-gray-900 section-padding-sm">
-        <div class="container-custom">
+    <section class="bg-white dark:bg-gray-900 section-padding-sm relative overflow-hidden">
+        <DecorativeBackground />
+        <div class="container-custom relative z-10">
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Banner Visión -->
                 <div

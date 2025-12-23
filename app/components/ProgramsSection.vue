@@ -1,15 +1,16 @@
 <template>
-  <section id="programas" class="section-padding bg-white dark:bg-gray-900">
-    <div class="container-custom">
+  <section id="programas" class="section-padding bg-white dark:bg-gray-900 relative overflow-hidden">
+    <DecorativeBackground />
+    <div class="container-custom relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
         <span class="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">
           Nuestros Servicios
         </span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 dark:text-white">
           Programas y Proyectos
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400">
           Soluciones integrales diseñadas para transformar la experiencia educativa en tu institución
         </p>
       </div>

@@ -1,5 +1,10 @@
 <template>
-  <header class="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+  <header :class="[
+    'sticky top-0 z-50 w-full border-b transition-all duration-300',
+    isScrolled
+      ? 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700'
+      : 'bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-gray-900/80 dark:via-gray-900/40 dark:to-transparent dark:backdrop-blur-md border-gray-200 dark:border-white/10'
+  ]">
     <nav class="container-custom">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
@@ -46,14 +51,14 @@
 
     <!-- Mobile menu -->
     <div id="mobile-menu"
-      class="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white border-e"
+      class="hs-overlay [--auto-close:lg] hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[60] bg-white dark:bg-gray-800 border-e border-gray-200 dark:border-gray-700"
       role="dialog" tabindex="-1" aria-labelledby="mobile-menu-label">
-      <div class="flex justify-between items-center py-3 px-4 border-b">
-        <h3 id="mobile-menu-label" class="font-bold text-gray-800">
+      <div class="flex justify-between items-center py-3 px-4 border-b dark:border-gray-700">
+        <h3 id="mobile-menu-label" class="font-bold text-gray-800 dark:text-white">
           Menú
         </h3>
         <button type="button"
-          class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200"
+          class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-200 dark:focus:bg-gray-600"
           aria-label="Close" data-hs-overlay="#mobile-menu">
           <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -65,7 +70,7 @@
       <div class="p-4">
         <nav class="flex flex-col gap-4">
           <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
-            class="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors py-2"
+            class="text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2"
             data-hs-overlay="#mobile-menu">
             {{ item.name }}
           </NuxtLink>
@@ -86,6 +91,40 @@ const toggleTheme = () => {
     localStorage.setItem('hs_theme', isDark.value ? 'dark' : 'light');
   }
 };
+
+onMounted(() => {
+  if (import.meta.client) {
+    // Inicializar Preline
+    import('preline/preline').then((module) => {
+      if (window.HSStaticMethods) {
+        window.HSStaticMethods.autoInit();
+      }
+    });
+
+    // Limpiar backdrop cuando el menú se cierra
+    const cleanupBackdrop = () => {
+      const backdrop = document.querySelector('.hs-overlay-backdrop');
+      if (backdrop && !document.querySelector('.hs-overlay.open')) {
+        backdrop.remove();
+      }
+    };
+
+    // Escuchar eventos de cierre del overlay
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target.closest('[data-hs-overlay="#mobile-menu"]')) {
+        setTimeout(cleanupBackdrop, 400);
+      }
+    });
+
+    // También limpiar al presionar Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        setTimeout(cleanupBackdrop, 400);
+      }
+    });
+  }
+});
 
 
 const navigation = [

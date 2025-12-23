@@ -1,6 +1,8 @@
 <template>
-    <section id="quienes-somos" class="section-padding bg-white dark:bg-gray-900 dark:text-white">
-        <div class="container-custom">
+    <section id="quienes-somos"
+        class="section-padding bg-white dark:bg-gray-900 dark:text-white relative overflow-hidden">
+        <DecorativeBackground />
+        <div class="container-custom relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <span

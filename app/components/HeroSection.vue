@@ -1,7 +1,7 @@
 <template>
-  <section class="relative bg-white dark:bg-gray-900 pb-0">
+  <section class="relative bg-white dark:bg-gray-900 pb-0 -mt-20">
     <!-- Hero Slider -->
-    <div class="relative h-[700px] overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
+    <div class="relative h-[700px] pt-20 overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
       <!-- Slides Container -->
       <div class="relative h-full">
         <!-- Slide 1 -->
@@ -12,7 +12,7 @@
               style="background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070');">
             </div>
 
-            <div class="container-custom relative h-full flex items-center">
+            <div class="container-custom relative h-full flex items-start pt-16">
               <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
                 <div class="text-white space-y-6">
                   <div class="inline-block">
@@ -145,7 +145,7 @@
 
       <!-- Gradiente de difuminado inferior -->
       <div
-        class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white dark:from-gray-900 via-white/60 dark:via-gray-900/60 to-transparent pointer-events-none z-10">
+        class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-gray-900 via-white/40 dark:via-gray-900/40 to-transparent pointer-events-none z-10">
       </div>
 
       <!-- Navigation Arrows -->
