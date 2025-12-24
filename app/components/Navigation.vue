@@ -1,9 +1,7 @@
 <template>
   <header :class="[
     'sticky top-0 z-50 w-full border-b transition-all duration-300',
-    isScrolled
-      ? 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700'
-      : 'bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-gray-900/80 dark:via-gray-900/40 dark:to-transparent dark:backdrop-blur-md border-gray-200 dark:border-white/10'
+    'bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-gray-900/80 dark:via-gray-900/40 dark:to-transparent dark:backdrop-blur-md border-gray-200 dark:border-white/10'
   ]">
     <nav class="container-custom">
       <div class="flex items-center justify-between h-20">
@@ -97,7 +95,7 @@ onMounted(() => {
   if (import.meta.client) {
     // Detectar scroll para cambiar estilos del header
     const handleScroll = () => {
-      isScrolled.value = window.scrollY > 50;
+      isScrolled.value = window.scrollY > 0;
     };
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Inicializar
