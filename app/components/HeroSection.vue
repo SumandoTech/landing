@@ -1,7 +1,7 @@
 <template>
   <section class="relative bg-white dark:bg-gray-900 pb-0 -mt-20">
     <!-- Hero Slider -->
-    <div class="relative h-[700px] pt-20 overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
+    <div class="relative h-[600px] md:h-[700px] pt-20 overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
       <!-- Slides Container -->
       <div class="relative h-full">
         <!-- Slide 1 -->
@@ -47,7 +47,8 @@
                   </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-6">
+                <!-- Stats boxes - Hidden on mobile/tablet -->
+                <div class="hidden lg:grid grid-cols-2 gap-6">
                   <div
                     class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:bg-white/15 transition-all duration-300">
                     <div class="text-4xl font-bold text-white mb-2">15+</div>
@@ -148,23 +149,23 @@
         class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-gray-900 via-white/40 dark:via-gray-900/40 to-transparent pointer-events-none z-10">
       </div>
 
-      <!-- Navigation Arrows -->
+      <!-- Navigation Arrows - Hidden on mobile, users can swipe -->
       <button @click="prevSlide"
-        class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-20">
+        class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-20">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
       <button @click="nextSlide"
-        class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-20">
+        class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 items-center justify-center text-white hover:bg-white/30 transition-all duration-300 z-20">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       <!-- Dots Indicator -->
-      <div class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+      <div class="absolute bottom-12 md:bottom-24 left-1/2 -translate-x-1/2 flex gap-3 z-30">
         <button v-for="(slide, index) in 3" :key="index" @click="currentSlide = index"
           class="w-3 h-3 rounded-full transition-all duration-300"
           :class="currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/75'">

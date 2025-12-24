@@ -14,10 +14,10 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center gap-6">
-          <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
+          <a v-for="item in navigation" :key="item.name" :href="item.href"
             class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-blue-400 transition-colors">
             {{ item.name }}
-          </NuxtLink>
+          </a>
 
           <!-- Theme Toggle -->
           <button @click="toggleTheme" type="button"
@@ -69,11 +69,11 @@
       </div>
       <div class="p-4">
         <nav class="flex flex-col gap-4">
-          <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href"
+          <a v-for="item in navigation" :key="item.name" :href="item.href"
             class="text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2"
             data-hs-overlay="#mobile-menu">
             {{ item.name }}
-          </NuxtLink>
+          </a>
         </nav>
       </div>
     </div>
@@ -83,6 +83,7 @@
 <script setup>
 
 const isDark = useState('isDark', () => false);
+const isScrolled = ref(false);
 
 const toggleTheme = () => {
   isDark.value = !isDark.value;
@@ -94,6 +95,13 @@ const toggleTheme = () => {
 
 onMounted(() => {
   if (import.meta.client) {
+    // Detectar scroll para cambiar estilos del header
+    const handleScroll = () => {
+      isScrolled.value = window.scrollY > 50;
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Inicializar
+
     // Inicializar Preline
     import('preline/preline').then((module) => {
       if (window.HSStaticMethods) {

@@ -13,7 +13,7 @@
                         <!-- Formulario con Web3Forms -->
                         <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
                             <!-- Access Key de Web3Forms - reemplazar con tu key real -->
-                            <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+                            <input type="hidden" name="access_key" value="ef491069-4ae9-46d8-9db8-a7c2168eb2f9">
                             <input type="hidden" name="subject" value="Nuevo contacto desde el sitio web">
                             <input type="hidden" name="from_name" value="Fundación Sumando Web">
 
@@ -83,12 +83,13 @@
                         </p>
                     </div>
 
-                    <!-- Info de Contacto -->
-                    <div class="space-y-4">
-                        <div
-                            class="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <!-- Info de Contacto - Una sola card -->
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-700">
+                        <!-- Email -->
+                        <div class="flex items-center gap-4 p-5">
                             <div
-                                class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                                class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -104,10 +105,10 @@
                             </div>
                         </div>
 
-                        <div
-                            class="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+                        <!-- Teléfono -->
+                        <div class="flex items-center gap-4 p-5">
                             <div
-                                class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                                class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -120,23 +121,6 @@
                                     class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                                     +56 9 1234 5678
                                 </a>
-                            </div>
-                        </div>
-
-                        <div
-                            class="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
-                            <div
-                                class="w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                                <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="text-sm font-semibold text-gray-500 dark:text-gray-400">Horario</div>
-                                <span class="text-gray-900 dark:text-white font-medium">Lunes a Viernes: 9:00 -
-                                    18:00</span>
                             </div>
                         </div>
                     </div>
