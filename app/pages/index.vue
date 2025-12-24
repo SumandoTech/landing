@@ -5,8 +5,8 @@
 
         <!-- Contenedor de secciones CON patrón -->
         <div class="relative">
-            <!-- Patrón de fondo SOLO sobre estas secciones -->
-            <div class="absolute inset-0 pointer-events-none z-[1] overflow-hidden">
+            <!-- Patrón de fondo ENCIMA de las secciones -->
+            <div class="absolute inset-0 pointer-events-none z-[100] overflow-hidden">
                 <!-- Patrón de puntos -->
                 <div class="absolute inset-0 opacity-[0.04] dark:opacity-[0.08]"
                     style="background-image: radial-gradient(circle, #3b82f6 2px, transparent 2px); background-size: 40px 40px;">
@@ -47,14 +47,12 @@
                     style="filter: brightness(0) saturate(100%) invert(45%) sepia(98%) saturate(1000%) hue-rotate(200deg);" />
             </div>
 
-            <!-- Secciones con contenido (z-index mayor que el patrón) -->
-            <div class="relative z-[2]">
-                <ServicesSection />
-                <ClientCarousel />
-                <AboutSection />
-                <ProgramsSection />
-                <ContactSection />
-            </div>
+            <!-- Secciones con contenido -->
+            <ServicesSection />
+            <ClientCarousel />
+            <AboutSection />
+            <ProgramsSection />
+            <ContactSection />
         </div>
     </div>
 </template>
