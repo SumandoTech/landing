@@ -1,7 +1,8 @@
 <template>
   <section class="relative bg-white dark:bg-gray-900 pb-0 -mt-20">
-    <!-- Hero Slider -->
-    <div class="relative h-[650px] md:h-[780px] pt-20 overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900">
+    <!-- Hero Slider con curva inferior -->
+    <div class="relative h-[650px] md:h-[780px] pt-20 overflow-hidden bg-gradient-to-br from-slate-900 to-blue-900"
+      style="clip-path: ellipse(150% 100% at 50% 0%);">
       <!-- Slides Container -->
       <div class="relative h-full">
         <!-- Slide 1 -->
@@ -144,10 +145,7 @@
         </transition>
       </div>
 
-      <!-- Gradiente de difuminado inferior - Pequeño y solo en el borde -->
-      <div
-        class="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-10 bg-gradient-to-t from-white via-white/50 to-transparent dark:from-gray-900 dark:via-gray-900/50">
-      </div>
+      <!-- La curva se logra con clip-path en el contenedor principal -->
 
       <!-- Navigation Arrows - Hidden on mobile, users can swipe -->
       <button @click="prevSlide"
