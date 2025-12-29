@@ -13,7 +13,7 @@
               style="background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070');">
             </div>
 
-            <div class="container-custom relative h-full flex items-start pt-6">
+            <div class="container-custom relative h-full flex items-start pt-16">
               <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
                 <div class="text-white space-y-6">
                   <div class="inline-block">
@@ -34,7 +34,7 @@
 
                   <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <a href="#servicios"
-                      class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">
+                      class="hidden lg:inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg">
                       Conoce nuestros programas
                       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
