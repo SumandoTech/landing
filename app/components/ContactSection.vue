@@ -226,9 +226,9 @@ const handleSubmit = async () => {
                             </div>
                             <div>
                                 <div class="text-sm font-semibold text-gray-500 dark:text-gray-400">Teléfono</div>
-                                <a href="tel:+56912345678"
+                                <a href="tel:+56944531543"
                                     class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
-                                    +56 9 1234 5678
+                                    +56 9 4453 1543
                                 </a>
                             </div>
                         </div>

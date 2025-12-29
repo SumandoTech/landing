@@ -19,14 +19,14 @@
         <div class="order-1 lg:order-2 lg:sticky lg:top-32">
           <span
             class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-semibold mb-6 uppercase tracking-wide">
-            Nuestros Clientes
+            Instituciones Aliadas
           </span>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-            Instituciones que Confían en Nosotros
+            Trabajamos con las Mejores Instituciones
           </h2>
           <div class="w-24 h-1 bg-green-600 mb-6 rounded-full"></div>
           <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-            Colaboramos con las instituciones educativas más prestigiosas del país
+            Colaboramos con instituciones educativas comprometidas con la excelencia y la transformación social
           </p>
         </div>
 
