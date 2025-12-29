@@ -10,7 +10,7 @@
             <div v-for="(client, index) in clients" :key="`grid-${index}`"
               class="p-2 md:p-8 lg:p-1 bg-white rounded-xl border border-gray-200 hover:border-green-600 hover:shadow-lg transition-all">
               <img :src="client.logo" :alt="client.name"
-                class="w-full h-auto min-h-40 max-h-40 object-contain mx-auto filter grayscale hover:grayscale-0 transition-all" />
+                class="w-full h-auto min-h-40 max-h-40 object-contain mx-auto transition-all" />
             </div>
           </div>
         </div>
