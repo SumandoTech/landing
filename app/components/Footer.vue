@@ -8,7 +8,8 @@
           <p class="text-sm text-gray-400">
             Transformando vidas a través de la educación y el desarrollo comunitario desde 2010.
           </p>
-          <div class="flex gap-4">
+          <!-- Social media icons - Hidden until URLs are available -->
+          <div v-if="false" class="flex gap-4">
             <a href="#"
               class="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
