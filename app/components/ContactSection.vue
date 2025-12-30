@@ -2,10 +2,10 @@
 import { ref } from 'vue';
 
 const formData = ref({
-  name: '',
-  email: '',
-  institution: '',
-  message: ''
+    name: '',
+    email: '',
+    institution: '',
+    message: ''
 });
 
 const isSubmitting = ref(false);
@@ -13,51 +13,51 @@ const submitStatus = ref<'idle' | 'success' | 'error'>('idle');
 const errorMessage = ref('');
 
 const handleSubmit = async () => {
-  if (isSubmitting.value) return;
+    if (isSubmitting.value) return;
 
-  isSubmitting.value = true;
-  submitStatus.value = 'idle';
-  errorMessage.value = '';
+    isSubmitting.value = true;
+    submitStatus.value = 'idle';
+    errorMessage.value = '';
 
-  try {
-    const response = await $fetch('/api/contact', {
-      method: 'POST',
-      body: {
-        name: formData.value.name,
-        email: formData.value.email,
-        message: formData.value.message,
-        institution: formData.value.institution || undefined
-      }
-    });
+    try {
+        const response = await $fetch('/api/contact', {
+            method: 'POST',
+            body: {
+                name: formData.value.name,
+                email: formData.value.email,
+                message: formData.value.message,
+                institution: formData.value.institution || undefined
+            }
+        });
 
-    submitStatus.value = 'success';
-    
-    // Resetear formulario
-    formData.value = {
-      name: '',
-      email: '',
-      institution: '',
-      message: ''
-    };
+        submitStatus.value = 'success';
 
-    // Limpiar mensaje de éxito después de 5 segundos
-    setTimeout(() => {
-      submitStatus.value = 'idle';
-    }, 5000);
+        // Resetear formulario
+        formData.value = {
+            name: '',
+            email: '',
+            institution: '',
+            message: ''
+        };
 
-  } catch (error: any) {
-    console.error('Error al enviar el formulario:', error);
-    submitStatus.value = 'error';
-    errorMessage.value = error.data?.statusMessage || 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.';
-    
-    // Limpiar mensaje de error después de 5 segundos
-    setTimeout(() => {
-      submitStatus.value = 'idle';
-      errorMessage.value = '';
-    }, 5000);
-  } finally {
-    isSubmitting.value = false;
-  }
+        // Limpiar mensaje de éxito después de 5 segundos
+        setTimeout(() => {
+            submitStatus.value = 'idle';
+        }, 5000);
+
+    } catch (error: any) {
+        console.error('Error al enviar el formulario:', error);
+        submitStatus.value = 'error';
+        errorMessage.value = error.data?.statusMessage || 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.';
+
+        // Limpiar mensaje de error después de 5 segundos
+        setTimeout(() => {
+            submitStatus.value = 'idle';
+            errorMessage.value = '';
+        }, 5000);
+    } finally {
+        isSubmitting.value = false;
+    }
 };
 </script>
 
@@ -74,11 +74,13 @@ const handleSubmit = async () => {
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Envíanos un mensaje</h3>
 
                         <!-- Mensaje de éxito -->
-                        <div v-if="submitStatus === 'success'" 
+                        <div v-if="submitStatus === 'success'"
                             class="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl">
                             <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 <p class="text-green-800 dark:text-green-200 font-medium">
                                     ¡Mensaje enviado correctamente! Te contactaremos pronto.
@@ -87,11 +89,13 @@ const handleSubmit = async () => {
                         </div>
 
                         <!-- Mensaje de error -->
-                        <div v-if="submitStatus === 'error'" 
+                        <div v-if="submitStatus === 'error'"
                             class="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl">
                             <div class="flex items-center gap-3">
-                                <svg class="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                <svg class="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"></path>
                                 </svg>
                                 <p class="text-red-800 dark:text-red-200 font-medium">
                                     {{ errorMessage }}
@@ -106,12 +110,7 @@ const handleSubmit = async () => {
                                     class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                     Nombre completo
                                 </label>
-                                <input 
-                                    type="text" 
-                                    id="name" 
-                                    v-model="formData.name"
-                                    required
-                                    :disabled="isSubmitting"
+                                <input type="text" id="name" v-model="formData.name" required :disabled="isSubmitting"
                                     class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                     placeholder="Tu nombre" />
                             </div>
@@ -121,11 +120,7 @@ const handleSubmit = async () => {
                                     class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                     Email
                                 </label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    v-model="formData.email"
-                                    required
+                                <input type="email" id="email" v-model="formData.email" required
                                     :disabled="isSubmitting"
                                     class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                     placeholder="tu@email.com" />
@@ -136,10 +131,7 @@ const handleSubmit = async () => {
                                     class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                     Institución
                                 </label>
-                                <input 
-                                    type="text" 
-                                    id="institution" 
-                                    v-model="formData.institution"
+                                <input type="text" id="institution" v-model="formData.institution"
                                     :disabled="isSubmitting"
                                     class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                                     placeholder="Nombre de tu institución" />
@@ -150,23 +142,21 @@ const handleSubmit = async () => {
                                     class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                     Mensaje
                                 </label>
-                                <textarea 
-                                    id="message" 
-                                    v-model="formData.message"
-                                    rows="4" 
-                                    required
+                                <textarea id="message" v-model="formData.message" rows="4" required
                                     :disabled="isSubmitting"
                                     class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                                     placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
                             </div>
 
-                            <button 
-                                type="submit"
-                                :disabled="isSubmitting"
+                            <button type="submit" :disabled="isSubmitting"
                                 class="w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-                                <svg v-if="isSubmitting" class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                <svg v-if="isSubmitting" class="animate-spin h-5 w-5 text-white"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
                                 </svg>
                                 <span>{{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}</span>
                             </button>
@@ -235,7 +225,7 @@ const handleSubmit = async () => {
                     </div>
 
                     <!-- Redes Sociales -->
-                    <div class="flex gap-3">
+                    <div v-if="false" class="flex gap-3">
                         <a href="#"
                             class="w-12 h-12 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:border-blue-500 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
