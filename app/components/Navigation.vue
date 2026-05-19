@@ -12,10 +12,16 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center gap-8">
-          <a v-for="item in navigation" :key="item.name" :href="item.href"
-            class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-            {{ item.name }}
-          </a>
+          <template v-for="item in navigation" :key="item.name">
+            <NuxtLink v-if="item.to" :to="item.to"
+              class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              {{ item.name }}
+            </NuxtLink>
+            <a v-else :href="item.href"
+              class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              {{ item.name }}
+            </a>
+          </template>
 
           <!-- Theme Toggle -->
           <button @click="toggleTheme" type="button"
@@ -48,10 +54,16 @@
     <Transition name="slide-down">
       <div v-if="isMobileMenuOpen" class="lg:hidden border-t border-gray-200 dark:border-gray-700">
         <div class="container-custom py-4 space-y-1">
-          <a v-for="item in navigation" :key="item.name" :href="item.href" @click="closeMobileMenu"
-            class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-            {{ item.name }}
-          </a>
+          <template v-for="item in navigation" :key="item.name">
+            <NuxtLink v-if="item.to" :to="item.to" @click="closeMobileMenu"
+              class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              {{ item.name }}
+            </NuxtLink>
+            <a v-else :href="item.href" @click="closeMobileMenu"
+              class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+              {{ item.name }}
+            </a>
+          </template>
 
           <!-- Theme toggle in mobile -->
           <button @click="toggleTheme"
@@ -110,11 +122,11 @@ onMounted(() => {
 });
 
 const navigation = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Servicios', href: '#servicios' },
-  { name: 'Quiénes Somos', href: '#quienes-somos' },
-  { name: 'Programas', href: '#programas' },
-  { name: 'Contacto', href: '#contacto' },
+  { name: 'Inicio', to: '/' },
+  { name: 'Servicios', href: '/#servicios' },
+  { name: 'Quiénes Somos', to: '/quienes-somos' },
+  { name: 'Programas', to: '/programas' },
+  { name: 'Contacto', href: '/#contacto' },
 ];
 </script>
 

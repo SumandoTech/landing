@@ -38,10 +38,10 @@
         <div>
           <h3 class="text-white font-semibold mb-4">Navegación</h3>
           <ul class="space-y-3">
-            <li><a href="#servicios" class="text-sm hover:text-blue-400 transition-colors">Servicios</a></li>
-            <li><a href="#quienes-somos" class="text-sm hover:text-blue-400 transition-colors">Quiénes Somos</a></li>
-            <li><a href="#programas" class="text-sm hover:text-blue-400 transition-colors">Programas</a></li>
-            <li><a href="#contacto" class="text-sm hover:text-blue-400 transition-colors">Contacto</a></li>
+            <li><a href="/#servicios" class="text-sm hover:text-blue-400 transition-colors">Servicios</a></li>
+            <li><NuxtLink to="/quienes-somos" class="text-sm hover:text-blue-400 transition-colors">Quiénes Somos</NuxtLink></li>
+            <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Programas</NuxtLink></li>
+            <li><a href="/#contacto" class="text-sm hover:text-blue-400 transition-colors">Contacto</a></li>
           </ul>
         </div>
 
@@ -49,13 +49,10 @@
         <div>
           <h3 class="text-white font-semibold mb-4">Programas</h3>
           <ul class="space-y-3">
-            <li><a href="#programas" class="text-sm hover:text-blue-400 transition-colors">Evaluación y Diagnóstico</a>
-            </li>
-            <li><a href="#programas" class="text-sm hover:text-blue-400 transition-colors">Capacitación Docente</a></li>
-            <li><a href="#programas" class="text-sm hover:text-blue-400 transition-colors">Plataforma Tecnológica</a>
-            </li>
-            <li><a href="#programas" class="text-sm hover:text-blue-400 transition-colors">Programa de Examinadores</a>
-            </li>
+            <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Evaluación y Diagnóstico</NuxtLink></li>
+            <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Capacitación Docente</NuxtLink></li>
+            <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Plataforma Tecnológica</NuxtLink></li>
+            <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Programa de Examinadores</NuxtLink></li>
           </ul>
         </div>
 
