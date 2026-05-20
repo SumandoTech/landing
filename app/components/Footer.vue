@@ -38,7 +38,7 @@
         <div>
           <h3 class="text-white font-semibold mb-4">Navegación</h3>
           <ul class="space-y-3">
-            <li><a href="/#servicios" class="text-sm hover:text-blue-400 transition-colors">Servicios</a></li>
+            <li><NuxtLink to="/servicios" class="text-sm hover:text-blue-400 transition-colors">Servicios</NuxtLink></li>
             <li><NuxtLink to="/quienes-somos" class="text-sm hover:text-blue-400 transition-colors">Quiénes Somos</NuxtLink></li>
             <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Programas</NuxtLink></li>
             <li><a href="/#contacto" class="text-sm hover:text-blue-400 transition-colors">Contacto</a></li>

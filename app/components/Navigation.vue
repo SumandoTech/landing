@@ -123,7 +123,7 @@ onMounted(() => {
 
 const navigation = [
   { name: 'Inicio', to: '/' },
-  { name: 'Servicios', href: '/#servicios' },
+  { name: 'Servicios', to: '/servicios' },
   { name: 'Quiénes Somos', to: '/quienes-somos' },
   { name: 'Programas', to: '/programas' },
   { name: 'Contacto', href: '/#contacto' },
