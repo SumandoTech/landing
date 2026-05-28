@@ -68,7 +68,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span class="text-sm">Santiago, Chile</span>
+              <span class="text-sm">Irarrázaval 5185 of 603, Ñuñoa, Santiago, Chile</span>
             </li>
             <li class="flex items-start gap-2">
               <svg class="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -93,9 +93,12 @@
       <!-- Bottom bar -->
       <div class="mt-12 pt-8 border-t border-gray-800">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-sm text-gray-400">
-            © {{ new Date().getFullYear() }} Fundación Sumando. Todos los derechos reservados.
-          </p>
+          <div>
+            <p class="text-sm text-gray-400">
+              © {{ new Date().getFullYear() }} Fundación Educacional Sumando. Todos los derechos reservados.
+            </p>
+            <p class="text-xs text-gray-500 mt-1">RUT: 65.136.208-3 · Organización sin fines de lucro</p>
+          </div>
           <div class="flex gap-6">
             <NuxtLink to="/politica-privacidad" class="text-sm text-gray-400 hover:text-blue-400 transition-colors">
               Política de Privacidad
