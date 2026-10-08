@@ -14,6 +14,7 @@
         <div class="relative z-10">
             <ServicesSection />
             <ClientCarousel />
+            <TestimonialsSection />
             <AboutSection />
             <ProgramsSection />
             <ContactSection />
