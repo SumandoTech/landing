@@ -65,4 +65,11 @@ export default defineNuxtConfig({
   },
 
   modules: ['@nuxt/image'],
+
+  runtimeConfig: {
+    public: {
+      // Results platform (override with NUXT_PUBLIC_PLATFORM_URL, e.g. the QA site).
+      platformUrl: 'https://plataforma.fundacionsumando.cl',
+    },
+  },
 })

@@ -6,12 +6,12 @@
     <nav class="container-custom">
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center gap-3">
+        <NuxtLink to="/" class="flex shrink-0 items-center gap-3">
           <img src="/logo_sumando_1.png" alt="Fundación Sumando" class="h-10 w-auto" />
         </NuxtLink>
 
         <!-- Desktop Navigation -->
-        <div class="hidden lg:flex items-center gap-8">
+        <div class="hidden lg:flex items-center gap-5 xl:gap-8 whitespace-nowrap">
           <template v-for="item in navigation" :key="item.name">
             <NuxtLink v-if="item.to" :to="item.to"
               class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -22,6 +22,11 @@
               {{ item.name }}
             </a>
           </template>
+
+          <NuxtLink to="/plataforma"
+            class="inline-flex items-center rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 transition-colors">
+            Plataforma de resultados
+          </NuxtLink>
 
           <!-- Theme Toggle -->
           <button @click="toggleTheme" type="button"
@@ -64,6 +69,11 @@
               {{ item.name }}
             </a>
           </template>
+
+          <NuxtLink to="/plataforma" @click="closeMobileMenu"
+            class="block px-4 py-3 rounded-lg text-base font-semibold text-center text-white bg-blue-700 hover:bg-blue-800 transition-colors">
+            Plataforma de resultados
+          </NuxtLink>
 
           <!-- Theme toggle in mobile -->
           <button @click="toggleTheme"

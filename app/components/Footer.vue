@@ -42,6 +42,8 @@
             <li><NuxtLink to="/quienes-somos" class="text-sm hover:text-blue-400 transition-colors">Quiénes Somos</NuxtLink></li>
             <li><NuxtLink to="/programas" class="text-sm hover:text-blue-400 transition-colors">Programas</NuxtLink></li>
             <li><a href="/#contacto" class="text-sm hover:text-blue-400 transition-colors">Contacto</a></li>
+            <li><NuxtLink to="/plataforma" class="text-sm hover:text-blue-400 transition-colors">Acceso colegios</NuxtLink></li>
+            <li><NuxtLink to="/plataforma?tipo=examinador" class="text-sm hover:text-blue-400 transition-colors">Acceso examinadores</NuxtLink></li>
           </ul>
         </div>
 
